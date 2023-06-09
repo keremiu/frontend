@@ -1,38 +1,56 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  padding-top: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(91, 5, 5, 0.1) !important;
+  transition: all 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(67, 3, 3, 0.1) !important;
 }
 
-.App-link {
-  color: #61dafb;
+.card-header {
+  background-color: #7d97b1 !important;
+  padding: 16px;
+  border-bottom: 1px solid #141719 !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-title {
+  font-size: 18px;
+  margin-bottom: 8px;
 }
+
+.card-text-win {
+  margin-bottom: 4px;
+}
+
+.card-text-tie {
+  margin-bottom: 4px;
+}
+
+.card-text-loose {
+  margin-bottom: 4px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-4 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
