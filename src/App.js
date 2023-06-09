@@ -12,12 +12,12 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       let allData = {};
-      const anomalies = await axios.get('http://localhost:8000/api/anomalies');
-      const maxValues = await axios.get('http://localhost:8000/api/max');
+      const anomalies = await axios.get('http://16.171.33.141/api/anomalies');
+      const maxValues = await axios.get('http://16.171.33.141/api/max');
 
       for (const name of names) {
-        const teamsRes = await axios.get(`http://localhost:8000/api/teams/${name}`);
-        const oddsRes = await axios.get(`http://localhost:8000/api/odds/${name}`);
+        const teamsRes = await axios.get(`http://16.171.33.141/api/teams/${name}`);
+        const oddsRes = await axios.get(`http://16.171.33.141/api/odds/${name}`);
         allData[name] = {
           teams: teamsRes.data,
           odds: oddsRes.data,
