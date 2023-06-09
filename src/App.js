@@ -12,12 +12,12 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       let allData = {};
-      const anomalies = await axios.get('http://16.171.33.141/api/anomalies');
-      const maxValues = await axios.get('http://16.171.33.141/api/max');
-
+      const anomalies = await axios.get('http://16.171.33.141/api/anomalies', {withCredentials: true});
+      const maxValues = await axios.get('http://16.171.33.141/api/max', {withCredentials: true});
+  
       for (const name of names) {
-        const teamsRes = await axios.get(`http://16.171.33.141/api/teams/${name}`);
-        const oddsRes = await axios.get(`http://16.171.33.141/api/odds/${name}`);
+        const teamsRes = await axios.get(`http://16.171.33.141/api/teams/${name}`, {withCredentials: true});
+        const oddsRes = await axios.get(`http://16.171.33.141/api/odds/${name}`, {withCredentials: true});
         allData[name] = {
           teams: teamsRes.data,
           odds: oddsRes.data,
@@ -27,7 +27,7 @@ const App = () => {
       setAnomalies(anomalies);
       setMaxValues(maxValues);
     };
-
+  
     fetchData();
   }, []);
 
